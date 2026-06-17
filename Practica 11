@@ -1,0 +1,153 @@
+# Importa todas las funciones y componentes de la librería tkinter
+from tkinter import *
+
+# Crea la ventana principal de la aplicación
+ventana = Tk()
+
+# Define el título que aparecerá en la barra superior de la ventana
+ventana.title("Sistema Escolar")
+
+# Define el tamaño de la ventana (ancho x alto) en píxeles
+ventana.geometry("800x900")
+
+# --- SECCIÓN: ENCABEZADO Y DATOS GENERALES ---
+
+# Crea la etiqueta del título principal con fuente Comic Sans, tamaño 25, texto azul marino y fondo rosa
+etiqueta1 = Label(ventana, text="Escuela: Universidad Mexicana", fg="navy", bg="pink", font=("Comic Sans MS", 25, "bold"))
+# Empaqueta (muestra) la etiqueta en la ventana
+etiqueta1.pack(pady=10)
+
+# Crea y empaqueta la etiqueta para el campo "Nombre" con texto azul marino y fondo rosa
+Label(ventana, text="Nombre:", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack()
+# Crea el campo de texto de entrada para que el usuario escriba su nombre
+txtNombre = Entry(ventana, font=("Arial", 11))
+# Empaqueta el campo de texto de entrada
+txtNombre.pack(pady=5)
+
+# --- SECCIÓN: SEXO ---
+
+# Declara una variable de tipo cadena de tkinter para almacenar la opción seleccionada del Sexo
+sexo = StringVar() 
+
+# Crea y empaqueta la etiqueta de la sección "Sexo"
+Label(ventana, text="Sexo: ", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack(pady=5)
+
+# Crea y empaqueta la opción de botón redondo para "Femenino" conectado a la variable 'sexo'
+Radiobutton(ventana, text="Femenino", variable=sexo, value="Femenino", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Masculino" conectado a la variable 'sexo'
+Radiobutton(ventana, text="Masculino", variable=sexo, value="Masculino", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Perro" conectado a la variable 'sexo'
+Radiobutton(ventana, text="Perro", variable=sexo, value="Perro", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Prefiero no decirlo" conectado a la variable 'sexo'
+Radiobutton(ventana, text="Prefiero no decirlo", variable=sexo, value="Prefiero no decirlo", fg="black", bg="pink", font=("Arial", 10)).pack()
+
+# --- SECCIÓN: EDAD Y GRUPO ---
+
+# Crea y empaqueta la etiqueta para el campo "Edad"
+Label(ventana, text="Edad:", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack(pady=5)
+# Crea el campo de texto de entrada para la edad
+txtEdad = Entry(ventana, font=("Arial", 11))
+# Empaqueta el campo de texto de entrada de la edad
+txtEdad.pack(pady=5)
+
+# Crea y empaqueta la etiqueta para el campo "Grupo"
+Label(ventana, text="Grupo:", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack(pady=5)
+# Crea el campo de texto de entrada para el grupo
+txtGrupo = Entry(ventana, font=("Arial", 11))
+# Empaqueta el campo de texto de entrada del grupo
+txtGrupo.pack(pady=5)
+
+# --- SECCIÓN: MATERIAS ---
+
+# Declara una variable de tipo cadena de tkinter para almacenar la materia seleccionada
+materias = StringVar() 
+
+# Crea y empaqueta la etiqueta de la sección "Materias"
+Label(ventana, text="Materias:", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack(pady=5)
+
+# Crea y empaqueta la opción de botón redondo para "Administración de Centro de datos"
+Radiobutton(ventana, text="Administración de Centro de datos", variable=materias, value="Administración de Centro de datos", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Inglés"
+Radiobutton(ventana, text="Inglés", variable=materias, value="Inglés", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Metodología de investigación"
+Radiobutton(ventana, text="Metodología de investigación", variable=materias, value="Metodología de investigación", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Programación 3"
+Radiobutton(ventana, text="Programación 3", variable=materias, value="Programación 3", fg="black", bg="pink", font=("Arial", 10)).pack()
+# Crea y empaqueta la opción de botón redondo para "Ing. de Desarrollo de Software 2"
+Radiobutton(ventana, text="Ing. de Desarrollo de Software 2", variable=materias, value="Ing. de Desarrollo de Software 2", fg="black", bg="pink", font=("Arial", 10)).pack()
+
+# --- SECCIÓN: CURSOS (CHECKLIST) ---
+
+# Declara variables enteras de tkinter (0 para desmarcado, 1 para marcado) para cada curso
+pytonCurso = IntVar()
+sqlCurso = IntVar()
+redesCurso = IntVar()
+iaCurso = IntVar()
+webCurso = IntVar()
+
+# Crea y empaqueta la etiqueta de la sección "Cursos"
+Label(ventana, text="Cursos:", fg="navy", bg="pink", font=("Arial", 12, "bold")).pack(pady=5)
+
+# Crea y empaqueta las casillas de verificación (Checkbuttons) para cada tecnología, enlazadas a sus variables correspondientes
+Checkbutton(ventana, text="Python", variable=pytonCurso, fg="black", bg="pink", font=("Arial", 10)).pack()
+Checkbutton(ventana, text="SQL", variable=sqlCurso, fg="black", bg="pink", font=("Arial", 10)).pack()
+Checkbutton(ventana, text="Redes", variable=redesCurso, fg="black", bg="pink", font=("Arial", 10)).pack()
+Checkbutton(ventana, text="IA", variable=iaCurso, fg="black", bg="pink", font=("Arial", 10)).pack()
+Checkbutton(ventana, text="WEB", variable=webCurso, fg="black", bg="pink", font=("Arial", 10)).pack()
+
+# --- SECCIÓN: RESULTADOS ---
+
+# Crea la etiqueta vacía donde se imprimirá el resumen de los datos capturados
+resultado = Label(ventana, text="", fg="black", bg="white", font=("Courier", 10), justify=LEFT, width=50, height=5, relief="groove")
+# Empaqueta la etiqueta de resultados con un margen de separación
+resultado.pack(pady=15)
+
+# --- SECCIÓN: FUNCIONES DE LÓGICA ---
+
+# Función encargada de recopilar la información seleccionada y mostrarla en la etiqueta 'resultado'
+def mostrar():
+    cursos = ""  # Cadena vacía para armar la lista de cursos seleccionados
+    # Estructuras condicionales que evalúan si la casilla está marcada (.get() devuelve 1)
+    if pytonCurso.get():
+        cursos += "Python, "
+    if sqlCurso.get():
+        cursos += "SQL, "
+    if redesCurso.get():
+        cursos += "Redes, "
+    if iaCurso.get():
+        cursos += "IA, "
+    if webCurso.get():
+        cursos += "WEB, "
+    
+    # Modifica el texto de la etiqueta 'resultado' concatenando los valores de los inputs y los cursos
+    resultado.config(
+          text=f"Nombre:  {txtNombre.get()} \n"
+               f"Edad:    {txtEdad.get()}\n"
+               f"Sexo:    {sexo.get()}\n" 
+               f"Materia: {materias.get()}\n"  # Agregado para que también muestre la materia seleccionada
+               f"Cursos:  {cursos.strip(', ')}"  # Limpia la última coma sobrante     
+    )
+
+# Función encargada de borrar el texto escrito en las cajas de entrada de texto
+def limpiar():
+    txtNombre.delete(0, END)  # Borra desde el índice 0 hasta el final del texto de Nombre
+    txtEdad.delete(0, END)    # Borra desde el índice 0 hasta el final del texto de Edad
+    txtGrupo.delete(0, END)   # Borra desde el índice 0 hasta el final del texto de Grupo
+    resultado.config(text="") # Limpia el texto de la etiqueta de resultados
+
+# --- SECCIÓN: BOTONES DE ACCIÓN ---
+
+# Crea y empaqueta el botón "Mostrar Datos". Al hacer clic ejecuta la función 'mostrar'. Color azul marino, letras blancas.
+Button(ventana, text="Mostrar Datos", command=mostrar, fg="white", bg="navy", font=("Arial", 11, "bold"), width=15).pack(pady=5)
+
+# Crea y empaqueta el botón "Limpiar". Al hacer clic ejecuta la función 'limpiar'. Color gris/azul claro, letras negras.
+Button(ventana, text="Limpiar", command=limpiar, fg="black", bg="lightgrey", font=("Arial", 11, "bold"), width=15).pack(pady=5)
+
+# Crea y empaqueta el botón "Salir". Al hacer clic destruye y cierra la interfaz. Color rojo oscuro, letras blancas.
+Button(ventana, text="Salir", command=ventana.destroy, fg="white", bg="darkred", font=("Arial", 11, "bold"), width=15).pack(pady=5)
+
+# Configura el fondo general de la ventana como rosa
+ventana.config(bg="pink")
+
+# Inicia el bucle de eventos para mantener la ventana abierta y activa esperando acciones del usuario
+ventana.mainloop()
